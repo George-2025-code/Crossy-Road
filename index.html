@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 这个title是给Unity检测版本用的，保持版本号格式 -->
+    <title>1.2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* 全局样式：淡灰色背景，居中布局 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0; /* 淡灰色背景 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* 让内容垂直居中 */
+            padding: 20px;
+        }
+
+        /* 页面内的大号显示标题 */
+        .main-title {
+            font-size: 48px; /* 超大字号 */
+            font-weight: bold;
+            color: #333; /* 深灰色文字，对比明显 */
+            margin-bottom: 40px; /* 与按钮保持间距 */
+            text-align: center;
+        }
+
+        /* 下载按钮样式 */
+        .download-btn {
+            padding: 15px 40px;
+            font-size: 20px;
+            font-weight: 600;
+            background-color: #4CAF50; /* 绿色主色调 */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* 点击过渡效果 */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 轻微阴影提升质感 */
+        }
+
+        /* 按钮hover/点击效果 */
+        .download-btn:hover {
+            background-color: #45a049;
+        }
+
+        .download-btn:active {
+            background-color: #3d8b40;
+            transform: translateY(2px); /* 点击下沉效果 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 页面内显示的大号标题 -->
+    <h1 class="main-title">Crossy Road</h1>
+    <!-- 下载按钮，点击触发下载 -->
+    <button class="main-btn download-btn" onclick="startDownload()">
+        下载游戏
+    </button>
+
+    <script>
+        // 下载触发函数
+        function startDownload() {
+            // 替换为你的游戏安装包实际下载链接
+            const downloadUrl = "https://your-domain.com/CrossyRoad_v1.2.zip";
+            
+            // 方式1：直接打开下载链接（浏览器默认处理下载）
+            window.location.href = downloadUrl;
+
+            // 【可选】方式2：创建隐藏a标签触发下载（可指定文件名）
+            // const link = document.createElement('a');
+            // link.href = downloadUrl;
+            // link.download = "CrossyRoad_v1.2.zip"; // 指定下载后的文件名
+            // link.click();
+
+            // 可选：添加下载提示
+            alert("开始下载Crossy Road最新版本！");
+        }
+    </script>
+</body>
+</html>
